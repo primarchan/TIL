@@ -1,0 +1,8 @@
+<개발환경 준비>
+
+[확장 : 마켓플레이스]
+- HTML CSS Support
+- HTML snippets
+- JavaScript(ES6) code snippets
+- Live Server
+- Open In Default Browser
