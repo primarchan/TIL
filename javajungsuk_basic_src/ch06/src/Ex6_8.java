@@ -11,10 +11,10 @@ class Ex6_8 {
 	}
 
 	static Data3 copy(Data3 d) {
-		Data3 tmp = new Data3();    // »õ·Î¿î °´Ã¼ tmp¸¦ »ı¼ºÇÑ´Ù.
+		Data3 tmp = new Data3();    // ìƒˆë¡œìš´ ê°ì²´ tmpë¥¼ ìƒì„±í•œë‹¤.
 
-		tmp.x = d.x;  // d.xÀÇ °ªÀ» tmp.x¿¡ º¹»çÇÑ´Ù.
+		tmp.x = d.x;  // d.xì˜ ê°’ì„ tmp.xì— ë³µì‚¬í•œë‹¤.
 
-		return tmp;   // º¹»çÇÑ °´Ã¼ÀÇ ÁÖ¼Ò¸¦ ¹İÈ¯ÇÑ´Ù.
+		return tmp;   // ë³µì‚¬í•œ ê°ì²´ì˜ ì£¼ì†Œë¥¼ ë°˜í™˜í•œë‹¤.
 	}
 }
