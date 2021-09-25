@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var txt = "ABCDEFGHIJKLMN";
+    console.log(txt.length); // 글자 길이
+
+    // indexOf
+    var str = "Please locate where 'locate'";
+    console.log(str.indexOf("locate")); // 해당 단어가 있으면 첫번째 인덱스 번호를 반환(인덱스 번호는 공백 포함), 없을 시에는 -1 반환
+
+    if(str.indexOf("") > -1) {
+      console.log("locate 문자 발견");
+    }
+
+    // lastIndexOf
+    console.log(str.lastIndexOf("locate")); // 해당 단어가 포함된 가장 마지막 단어의 첫번째 인덱스 번호를 반환
+
+    // search
+    console.log(str.search("locate")); // 해당 단어가 있으면 첫번째 인덱스 번호를 반환
+
+    // slice
+    var str = "Apple, Banana, Kiwi"
+    console.log(str.slice(7, 13)); // 첫번째 인자는 출력할 인덱스의 시작점, 두번째 인자는 출력할 인덱스의 다음 인덱스
+    console.log(str.slice(7)); // 두 번째 인덱스가 없으면 시작점부터 문자열 끝까지 출력
+    console.log(str.slice(-12, -6)); // 역순으로 출력
+
+    // substring
+    console.log(str.substring(7, 13)); // slice와 동일
+
+    // substr
+    console.log(str.substr(7, 6)); // 첫 번째 인자는 인덱스의 시작점, 두 번째 인자는 출력할 글자 수
+
+    var birthday = "970527";
+    console.log(birthday.substr(0, 2));
+    console.log(birthday.substr(2, 2));
+
+    var birthday = "1997-02-27";
+    console.log(birthday.substring(0, birthday.indexOf("-")));
+
+    // replace
+    var str = "Please visit here!";
+    var str2 = str.replace("here", "there"); 
+    console.log(str2);
+
+    var str = "Please visit here here here!";
+    var str2 = str.replace("here", "there"); // 인자로 지정된 문자열만 변환
+    console.log(str2);
+
+    
+    var str = "Please visit here here here!";
+    var str2 = str.replace(/here/gi, "there"); // 정규식
+    console.log(str2);
+
+    // uppercase
+    console.log(str.toUpperCase());
+
+    // lowercase
+    console.log(str.toLowerCase());
+
+    // john
+    // John
+    // 데이터베이스 상에는 john, John이 존재하는 경우 가정
+
+    // concat
+    var txt1 = "Hello";
+    var txt2 = "world";
+    var txt3 = txt1 + " " + txt2;
+    console.log(txt3);
+
+    var txt4 = txt1.concat(" ", txt2); // 문자열 결합
+    console.log(txt4);
+
+    // trim
+    var str = "     Hello World!     "
+    console.log(str);  
+    console.log(str.trim()); // 앞뒤 공백 제거
+
+    // padStart
+    var str = "5";
+    console.log(str.padStart(4, 0));
+    // ex) 3을 입력받아서 03으로 저장하는 상황 가정
+    var str = "3";
+    console.log(str.padStart(2, 0));
+
+    // padEnd
+    console.log(str.padEnd(4, 0)); // padStart의 반대
+
+    // charAt
+    var str = "Hello World";
+    console.log(str.charAt(1));
+
+    // split
+    var tags = "키보드,기계식,블루투스";
+    var arr1 = tags.split(",");
+    console.log(arr1);
+
+    var birthday = "1997-06-12"
+    var arr2 = birthday.split("-");
+    console.log(arr2);
+  </script>
+</body>
+</html>
