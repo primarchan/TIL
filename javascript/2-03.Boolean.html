@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var x = true; // or false
+    var y = new Boolean(true);
+
+    console.log(typeof x);
+    console.log(typeof y);    
+    console.log(x == y); // true(값 비교)
+    console.log(x === y); // false(타입 비교)
+
+    console.log(Boolean(10 > 9));
+
+    var x = 0;
+    console.log(x);
+    console.log(Boolean(x)); // false
+
+    var x = 1;
+    console.log(x);
+    console.log(Boolean(x)); // true
+
+    var x =""; // undifined
+    console.log(Boolean(x)); // false
+
+
+    var s = "abc";
+    var s2 = new String("abc");
+
+  </script>
+</body>
+</html>

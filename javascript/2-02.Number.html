@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // Number
+
+    var x = 123;
+
+    // toString()
+    // 숫자를 문자열로 변환
+    console.log(x.toString());
+
+    // toFixed()
+    // 지정된 소수점 자리수까지 반올림으로 표기
+    var x = 9.563243;
+    console.log(x.toFixed(2));
+
+    // toPrecision()
+    // 지정된 소수점 자리수(정수 포함)까지 반올림으로 표기
+    var x = 9.565;
+    console.log(x.toPrecision(2));
+
+    // Number()
+    // 숫자 출력 메서드
+    var x = Number("10"); // 숫자 10
+    var x = Number(true); // 1
+    var x = Number(false); // 0 
+    console.log(Number(" 10  ")); // 공백 무시하고 숫자 출력
+    console.log(Number(" 10"));
+    console.log(Number(" 10.33"));
+    console.log(Number(" 10,33")); // Nan
+    console.log(Number("John"));
+    console.log(Number("10 33"));
+    // Nan - Not a Number
+
+    // parseInt()
+    // 문자열을 숫자(정수, 소수점 제외)로 변환
+    // 첫 번째 숫자 출력 후 공백 이후는 무시
+    console.log(parseInt("3"));
+    console.log(parseInt("3.14"));
+    console.log(parseInt("3.9"));
+    console.log(parseInt("10 33"));
+    console.log(parseInt("12 years")); // 12
+    console.log(parseInt("12 years")); // 
+    
+    // parseFloat()
+    // 문자열을 숫자(소수점 포함)로 변환
+    console.log(parseFloat("10"));
+    console.log(parseFloat("10.15"));
+    console.log(parseFloat("10.15 aa"));
+  </script>
+</body>
+</html>
