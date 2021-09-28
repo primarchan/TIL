@@ -18,7 +18,7 @@ class Point3D extends Point {
 	int z;
 
 	Point3D(int x, int y, int z) {
-		super(x, y); // Point(int x, int y)¸¦ È£Ãâ
+		super(x, y); // Point(int x, int y)ë¥¼ í˜¸ì¶œ
 		this.z = z;
 	}
 }
