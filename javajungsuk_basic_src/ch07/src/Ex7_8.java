@@ -37,6 +37,7 @@ class Buyer {	// 고객, 물건을 사는 사람
 		money -= p.price;            // 가진 돈에서 구입한 제품의 가격을 뺀다.
 		bonusPoint += p.bonusPoint;  // 제품의 보너스 점수를 추가한다.
 		System.out.println(p + "을/를 구입하셨습니다.");
+		// System.out.println(p.toString() + "을/를 구입하셨습니다.");
 	}
 }
 
@@ -44,8 +45,11 @@ class Ex7_8 {
 	public static void main(String args[]) {
 		Buyer b = new Buyer();
 
-		b.buy(new Tv1());
-		b.buy(new Computer());
+		// Product p = new Tv1();
+		// b.buy(p);
+		b.buy(new Tv1()); // buy(Product p) 호출
+		
+		b.buy(new Computer()); // buy(Product p) 호출
 
 		System.out.println("현재 남은 돈은 " + b.money + "만원입니다.");
 		System.out.println("현재 보너스점수는 " + b.bonusPoint + "점입니다.");

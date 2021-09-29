@@ -29,7 +29,7 @@ class Audio2 extends Product2 {
 class Buyer2 {			  // 고객, 물건을 사는 사람
 	int money = 1000;	  // 소유금액
 	int bonusPoint = 0; // 보너스점수
-	Product2[] cart = new Product2[10];   // 구입한 제품을 저장하기 위한 배열
+	Product2[] cart = new Product2[10];   // 구입한 제품을 저장하기 위한 배열(장바구니)
 	int i =0;			  // Product배열에 사용될 카운터
 
 	void buy(Product2 p) {

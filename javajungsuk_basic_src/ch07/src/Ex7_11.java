@@ -10,7 +10,7 @@ class Ex7_11 {
 
 class Child3 extends Parent3 implements MyInterface, MyInterface2 {
 	public void method1() {	
-		System.out.println("method1() in Child3"); // ¿À¹ö¶óÀÌµù
+		System.out.println("method1() in Child3"); // ì˜¤ë²„ë¼ì´ë”©
 	}			
 }
 
