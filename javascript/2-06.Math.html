@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // Math() 내장 함수
+
+    // round()
+    // 반올림, 반내림
+    console.log(Math.round(4.9));
+    console.log(Math.round(4.4));
+
+    // ceil()
+    // 무조건 올림으로 정수를 만듬
+    console.log(Math.ceil(6.2));
+    console.log(Math.ceil(72/10));
+    // 웹페이지 페이징 처리간 활용
+    // 72건
+    // 1페이지 보여지는 건수 10개 설정
+    // 1, 2, 3, 4, 5, 6, 7, 8
+
+    // floor()
+    // 무조건 내림으로 정수를 만듬
+    console.log(Math.floor(9.9)); // 9
+    console.log(Math.floor(-4.2)); // -5
+
+    // trunc()
+    // 정수부분만 리턴
+    console.log(Math.trunc(9.9)); // 9
+    console.log(Math.trunc(-4.2)); // -5
+
+    // sign()
+    // 음수이면 -1, 양수이면 1, 0 이면 0 리턴
+
+    // pow()
+    // 제곱
+    console.log(Math.pow(8, 2)); // 64
+
+    // sqrt()
+    // 루트
+    console.log(Math.sqrt(64));
+
+    // abs()
+    // 무조건 양수로 변환
+    console.log(Math.abs(-4.7));
+
+    // max()
+    console.log(Math.max(0, 150, 23, 45, -28, 77));
+
+    // min()
+    console.log(Math.min(0, 150, 23, 45, -28, 77));
+
+    // random
+    var x = Math.random(); // 0 ~ 1사이의 숫자
+    console.log(x);
+
+    // 1 ~ 10 랜덤 숫자, 정수
+    var x = Math.floor((Math.random() * 10) + 1); // 0 > x < 10
+
+    // 1 ~ 100 랜덤 숫자, 정수
+    var x = Math.floor((Math.random() * 100) + 1);
+
+    function getRndInteger(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    // min 1, max 10
+    // 10 90
+
+    console.log(getRndInteger(10, 20));
+
+  </script>
+</body>
+</html>
