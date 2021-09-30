@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // Date() 내장 함수
+    var d = new Date(); // 현재 날짜/시간
+    console.log(d); // Thu Sep 30 2021 23:41:50 GMT+0900 (한국 표준시)
+    
+    var year = d.getFullYear();
+    console.log("year", year);
+
+    var month = d.getMonth();
+    console.log("year", year);
+
+    var month = d.getDate();
+    console.log("date", date);
+
+    var month = d.getDay();
+    console.log("day", day);
+    // 일요일 - 0
+    // 월요일 - 1
+    // 화요일 - 2
+    // 수요일 - 3
+    // 목요일 - 4
+    // 금요일 - 5
+    // 토요일 - 6
+
+
+    var hour = d.getHours();
+    var minute = d.getMinutes();
+    var second = d.getSeconds();
+
+    // month 월인 경우는 1월 - 0
+    // day 일자인경우는 1 - 1
+    var d = new Date(2021, 3, 27, 11, 14, 23)
+    console.log(d);
+
+    // 2021-03-21, 2021.03.21
+    // 월 일 년도 - Mar 21, 2021
+    var month_en = ["Jan", "Feb", "Mar"];
+
+    // 3월인 경우 - 2가 아니라 3준다고 치면.
+    var mon = 2;
+    console.log(month_en[mon-1]);
+
+    // 타임존 고려
+
+  </script>
+</body>
+</html>
