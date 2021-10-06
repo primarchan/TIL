@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // JSON - 데이터를 저장하고 전송하기 위한 포맷
+    // 서버로부터  웹페이지로 데이터를 전송할 때 자주 사용
+    // 웹페이지에서 서버로 데이터를 전송할 때도 JSON 포맷 자주 사용.
+    // JSON - JvaScript Object Notation의 약자
+    // JSON으로 받아온 데이터를 객체로 바로 사용 가능
+
+    var data = {
+      "employees": [
+        {"firstName":"John", "lastName":"Doe"},
+        {"firstName":"John", "lastName":"Doe"},
+        {"firstName":"John", "lastName":"Doe"}
+      ]
+    }
+
+    // JSON.stringify
+    console.log(data);
+
+    console.log(JSON.stringify(data));
+
+    var text = '{ "employees": [' +
+        '{"firstName":"John", "lastName":"Doe"},' +
+        '{"firstName":"Anna", "lastName":"Smith"},' +
+        '{"firstName":"Peter", "lastName":"Johnes"} ]}';
+
+    // JSON.parse
+    var obj = JSON.parse(text);
+    console.log(obj);
+    
+  </script>
+</body>
+</html>
