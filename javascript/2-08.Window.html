@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Document</title>
+</head>
+<body>
+  <input type="text" />
+  <button type="button">저장</button>
+  <script>
+    // console.log(window);
+
+    // window.alert("이것은 alert 창입니다.")
+    // alert("이것은 alert 창입니다.") // windows는 글로벌 객체이므로 생략 가능
+    // var yn = confirm("정말 삭제하시겠습니까?")
+    // console.log(yn);
+
+    // if(yn) {
+      // 삭제 실행
+      // console.log("삭제 실행");
+    // }
+
+    // var txt = prompt("비밀번호를 입력하세요");
+    // console.log(txt);
+    // if(txt == null) {
+
+    // }else if(txt == "") {
+
+    // }else if(txt != "") {
+      // console.log(txt);
+    // }
+
+    // window.open("https://naver.com");
+
+    // window.print();
+
+    // setTimeout()
+    setTimeout(function(){
+      console.log("5초 후 프로그램 실행")
+    }, 5000);
+
+    // sentInterval
+    var i = 0;
+    var fnc = setInterval(function() {
+      console.log("3초마다 프로그램 실행" + i)
+      if(i == 3) {
+        clearInterval(fnc)
+      }
+      i++;
+    }, 3000);
+
+    // clearInterval
+  </script>
+</body>
+</html>
