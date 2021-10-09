@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function hello() {
+      console.log("Hello World");
+      return "Hello World";
+    }
+
+    var hello = function() {
+      console.log("Hello World");
+      return "Hello World";
+    }
+
+    var hello = () => {
+      // console.log("Hello World");
+      return "Hello World";
+    }
+
+    var hello = () => "Hello World";
+
+    var hello = (fullName) => "Hello " + fullName; // Arrow Function 사용시 return 생략 가능
+    var hello = fullName => "Hello " + fullName; // 파라미터가 1개이면 () 생략 가능
+    
+    console.log(hello("John Doe"));
+
+    var hello = (firstName, lastName) => "Hello " + firstName + " " + lastName;
+
+    console.log(hello("John", "Doe"));
+  </script>
+</body>
+</html>
