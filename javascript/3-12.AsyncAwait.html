@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Document</title>
+</head>
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script>
+    // Promise
+
+    var x = 1;
+
+    // 서버 호출해서 데이터를 받아오는 함수
+    // y = callServerData();
+
+    var z = x+ 2;
+
+    // axios - 오픈소스 라이브러리
+
+    var url = "https://7e31f1b7-ffd5-4746-b2a0-d68a2e609ab2.mock.pstmn.io/list";
+    // var data = axios.get(url).then(function(response){
+    //   console.log(response.data);
+    //   return response.data;
+    // });
+
+    function getData() {
+      // Promise
+      return new Promise(function(resolve, reject){
+      axios.get(url).then(function(response){
+        console.log(response.data);
+        resolve(response.data);
+        });
+      });
+    }
+
+    async function getData2() {
+      return (await axios.get(url)).data;
+    }
+
+    async function calculateSum() {
+      var data = getData2();
+      
+      var total = 0;
+
+      for(var item of data) {
+        total += item.price;
+      }
+      
+      console.log(total);
+    }
+
+    calculateSum();
+    
+    // getData().then(function(data){
+    //   for(var item of data) {
+    //     total += item.price;
+    //   }
+    // });
+    
+  </script>
+</body>
+</html>
