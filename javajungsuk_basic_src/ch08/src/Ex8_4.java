@@ -5,14 +5,14 @@ class Ex8_4 {
 		try {
 			System.out.println(3);
 			System.out.println(0/0);
-			System.out.println(4); 	// ½ÇÇàµÇÁö ¾Ê´Â´Ù.
+			System.out.println(4); 	// ì‹¤í–‰ë˜ì§€ ì•ŠëŠ”ë‹¤.
 		} catch (ArithmeticException ae)	{
 			if (ae instanceof ArithmeticException) 
 				System.out.println("true");	
 			System.out.println("ArithmeticException");
 		} catch (Exception e){
 			System.out.println("Exception");
-		}	// try-catchÀÇ ³¡
+		}	// end of try-catch
 		System.out.println(6);
-	}	// main¸Ş¼­µåÀÇ ³¡
+	}	// end of main
 }
