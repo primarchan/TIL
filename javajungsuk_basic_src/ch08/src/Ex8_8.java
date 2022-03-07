@@ -1,5 +1,5 @@
 class Ex8_8 {
 	public static void main(String[] args) {
-		throw new RuntimeException();	// RuntimeExceptionÀ» °íÀÇ·Î ¹ß»ı½ÃÅ²´Ù.
+		throw new RuntimeException();	// RuntimeExceptionì„ ê³ ì˜ë¡œ ë°œìƒì‹œí‚¨ë‹¤.
 	}
 }
