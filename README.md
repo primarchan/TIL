@@ -238,6 +238,190 @@ console.log("true || false : " + (true || false));  // true || false : true
 
 console.log("num > num ? 'true' : 'false' -> " + num > num ? 'true' : 'false');  // num > num ? 'true' : 'false' -> false
 ```
+</div>
+</details>
+
+### 3강 - Functions
+<details>
+<summary><b>3강 학습 자료 보기 (클릭)</b></summary>
+<div markdown="1">
+#### 3.1 함수 - 개요
+- JS 에서 함수는 독립된 목적의 작업을 수행하기 위한 코드의 블록입니다.
+- 함수는 각각의 기능을 가지며 JS 의 함수는 코드의 집합을 나타내는 자료형이며 객체입니다.
+- JS 의 함수는 일급 (First-Class) 객체이며 변수에 담거나, 전달인자와 반환값으로 전달할 수 있습니다.
+- 함수의 정의에는 함수명, 매개변수(Parameter), 실행 구문, 반환 결과가 있다면 반환 구문이 필요합니다
+
+#### 3.2 함수의 선언과 호출[1/2]
+- 함수 정의 방법은 함수 선언문, 함수 표현식, Function 생성자(Constructor) 함수 세가지 방식이 있습니다.
+- 특정 객체의 내부에서 선언되는 함수는 해당 객체를 통해서 호출하며 메소드라는 이름을 갖습니다.
+- 일반적으로 함수의 정의는 표현식에 의한 정의가 권장되며 이는 함수 선언문 방식의 선언은 함수의 호이스팅이 적용되기 때문입니다.
+```js
+// 함수 선언문
+function 함수이름(매개변수1, 매개변수2, ... , 매개변수n) {
+    // 함수 내용
+}
+```
+
+```js
+// 함수 표현식
+let 함수이름 = function (매개변수1, 매개변수2, ... , 매개변수n) {
+    // 함수 내용
+}
+```
+
+```js
+// Function 생성자 함수
+let 함수이름 = new Function("매개변수1", "매개변수2", ... , "매개변수n", "함수내용");
+```
+
+```js
+// 함수 호출
+함수이름(매개변수1, 매개변수2, ... , 매개변수n);
+```
+
+#### 3.2 함수의 선언과 호출[2/2]
+- 다음은 함수의 간단한 예제입니다.
+- 1부터 매개변수 number 까지의 합을 구하는 예제입니다.
+- 각각 함수 선언문, 함수 표현식 선언과 Function 생성자 함수 호출입니다.
+- 선언 방식은 달라도 함수 호출 방식은 동일합니다.
+```js
+// 함수 선언문
+function func1(n) {
+    let sum = 0;
+    
+    for (let number = 1; number <= n; number ++) {
+        sum += number;
+    }
+    console.log(sum);
+}
+
+// 함수 호출
+func1(10);
+```
+
+```js
+// 함수 표현식
+let func2 = function (n) {
+  let sum = 0;
+
+  for (let number = 1; number <= n; number ++) {
+    sum += number;
+  }
+  console.log(sum);
+}
+
+// 함수 호출
+func2(10);
+```
+
+```js
+// Function 생성자 함수
+var func3 = new Function("n",
+        "var sum = 0;" +
+        "for (var number = 1; number <= n; number++) {" +
+        " sum += number; " + 
+        "} " +
+        "console.log(sum);" );
+
+// 함수 호출
+func3(10)
+```
+
+#### 3.3 함수의 매개변수[1/2]
+- 함수의 정의 부분에 외부로부터 전달받을 변수를 매개변수 (Parameter) 라고 합니다.
+- 함수를 호출할 때 전달하는 값을 전달인자 (Argument) 라고 합니다.
+- JS 에서 함수 정의 시 매개변수에 대한 형식은 명시하지 않습니다.
+- 함수를 호출할 때, 정의된 매개변수와 전달인자의 개수가 일치하지 않더라도 호출이 가능합니다.
+```js
+function sum (x, y, z) {
+    let result = x + y + z;
+    return result;
+}
+
+console.log(sum(10));          // NaN
+console.log(sum(10, 20));      // NaN
+console.log(sum(10, 20, 30));  // 60
+```
+
+```js
+function sum (x, y, z) {
+    let result = 0;
+    for (let i = 0; i < arguments.length; i++) {
+        result += arguments[i];
+    }
+    
+    return result;
+}
+
+console.log(sum(10));          // 10
+console.log(sum(10, 20));      // 30
+console.log(sum(10, 20, 30));  // 60
+```
+
+#### 3.3 함수의 매개변수[2/2] - default pararmetr, rest parameter
+- 함수의 매개변수에 기본값 (default value) 을 지정할 수 있으며 이를 디폴트 매개변수 (default parameter) 라고 합니다.
+- 함수 호출 시 전달인자가 생략되면 디폴트 매개변수에 지정된 값이 사용됩니다.
+- 나머지 매개변수 (rest parameter) 는 ES6 부터 적용되었으며 임의의 수를 갖는 매개변수를 선언할 수 있습니다.
+- 나머지 매개변수는 배열 형태로 사용하며 반드시 매개변수 목록 마지막에 선언해야 합니다.
+```js
+function sum (x, y = 0, z = 0) {
+    return x + y + z;
+}
+
+console.log(sum(10));          // 10
+console.log(sum(10, 20));      // 30
+console.log(sum(10, 20, 30));  // 60
+```
+```js
+function minus (totalValue, ...minusValues) {
+    for(let value of minusValues) {
+        totalValue -= value;
+    }
+    
+    return totalValue;
+}
+
+console.log(sum(100, 10));          // 90
+console.log(sum(100, 10, 10));      // 80
+console.log(sum(100, 10, 10, 10));  // 70
+```
+
+#### 3.4 Arrow Function
+- function 키워드 대신 화살표 (=>) 를 사용해 함수를 선언하는 방식입니다.
+- 함수의 몸체 (body) 가 한줄 구문으로 이루어졌을 경우 중괄호 ({}) 를 생략 가능하며 암묵적으로 return 을 수행합니다.
+- 화살표는 익명함수로 생성자 역할로 사용할 수 없으며, 메소드로 사용하지 않습니다.
+- 나머지 매개변수 (rest parameter), 기본 매개변수 (default parameter), 구조 분해(destructuring) 을 지원합니다.
+```js
+// ES5
+var arr = [1, 2, 3].map(function (x) {return x * x; });
+
+// ES6
+const arr = [1, 2, 3].map(x => x * x);
+
+let func = x => x * x;
+let func = (x, y) => {return x + y};
+let PI = () => 3.141592653589793;
+let Foo = new Foo();  // Uncaught TypeError: Foo is not a constuctor.
+
+(param1, param2, ...rest) => { statements }
+(param1 = defaultValue1, param2, ..., paramN = defaultValueN) => { statements }
+let func = ([a, b] = [1, 2], {x: c} = {x:a +b}) => a + b + c;
+```
+
+
+</div>
+</details>
+
+<details>
+<summary><b>4강 학습 자료 보기 (클릭)</b></summary>
+<div markdown="1">
+
+</div>
+</details>
+
+<details>
+<summary><b>5강 학습 자료 보기 (클릭)</b></summary>
+<div markdown="1">
 
 </div>
 </details>
@@ -245,3 +429,5 @@ console.log("num > num ? 'true' : 'false' -> " + num > num ? 'true' : 'false'); 
 
 </div>
 </details>
+
+<hr>
