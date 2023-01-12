@@ -504,6 +504,9 @@ numbers.map(number => console.log(`number : ${number}`));  // 순회
 let evenNumbers = numbers.filter(number => number % 2 === 0);  // 필터
 evenNumbers.map(number => console.log(`number : ${number}`));  // 필터 결과
 ```
+#### 4강 실습
+- https://github.com/namoosori/javasciprt_basic/tree/master/source_template/calculator-template 에서 `calculator-template` 세팅
+> - `npm install`
 
 <div markdown="1">
 
