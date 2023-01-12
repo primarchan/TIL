@@ -3,7 +3,7 @@ export function isNumber(number) {
 }
 
 export function isOperation(operation) {
-    let operations = '+-*/';
+    let operations = '+-*/=';
     return operations.indexOf(operation) !== -1;
 }
 
