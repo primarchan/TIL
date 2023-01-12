@@ -513,9 +513,99 @@ evenNumbers.map(number => console.log(`number : ${number}`));  // 필터 결과
 </div>
 </details>
 
+### 5강 - Object, Class 의 이해
 <details>
 <summary><b>5강 학습 자료 보기 (클릭)</b></summary>
 <div markdown="1">
+
+#### 5.1 Object [1/4] - 개요
+- 객체는 이름과 값으로 구성된 프로퍼티의 집합입니다.
+- 문자열, 숫자, boolean, null, undefined 을 제외한 모든 값은 객체입니다.
+- 전역 객체를 제외한 JS 객체는 프로퍼티를 동적으로 추가하거나 삭제할 수 있습니다.
+- JS 객체는 프로토타입 (prototype) 이라는 특별한 프로퍼티를 포함합니다.
+
+#### 5.1 Object [2/4] - 속성 조회
+- 객체는 마침표(.)를 사용하거나 대괄호([])를 사용해서 속성 값에 접근합니다.
+- 객체에 없는 속성에 접근하면 undefined 를 반환합니다.
+- 객체 속성 값을 조회할 때 || 연산자를 사용하는 방법도 많이 사용합니다.
+  - 예시) `let middle = stooge[`middle-name`] || `none`;`
+```js
+// 객체 리터럴
+let employee = {};
+let employee = {
+  "first-name" : "Jobs",
+  "last-name" : "Steve",
+  "coompay" : "Apple"
+};
+
+// 객체 속성에 접근하는 두 가지 방법
+console.log(employee.coompay);  // 1. Dot 표기법
+console.log(employee["coompay"]);  // 2. [] 표기법
+
+// 다음과 같이 속성명에 연산자가 포함된 경우, []표기법으로만 접근 가능
+console.log(employee["first-name"]);
+console.log(employee["last-name"]);
+```
+
+#### 5.1 Object [3/4] - 속성 변경
+- 속성 값을 변경할 때는 마침표(.)나 대괄호([])를 사용합니다.
+  - 예시) `flight['airline'] = 'sunder';`
+  - 예시) `flight.airline = 'sunder';`
+- 객체에 값을 할당하는 속성이 없을 경우, 그 속성이 추가됩니다.
+  - 예시) `flight['nickname'] = 'super-phenex'`
+
+#### 5.1 Object [4/4]
+
+#### 5.2 ECMAScript 6
+
+#### 5.3 Class
+- ES5 까지는 성성자 함수와 프로토타입을 통해 클래스 형태를 구현하였으니 ES6 에서는 class 키워드를 통해 클래스를 정의합니다.
+- 함수와 동일하게 클래스 선언과 클래스 표현으로 클래스를 정의할 수 있으며 함수와 달리 호이스팅 되지 않습니다.
+- 믹스인 (mixin) 스타일의 상속을 쉽게 정의할 수 있습니다.
+- 프로토타입 (prototype) 을 사용하지 않고 직관적으로 부모 클래스의 생성자와 메서드에 접근할 수 있습니다.
+```js
+// ES5
+function Job(name) {
+    this.name = name;
+}
+
+Job.prototype.work = function () {
+  console.log(this.name + '일을 합니다.');
+}
+
+function Developer() {
+    Job.call(this, '프로그래머');
+}
+
+Developer.prototype = Object.create(Job.prototype);
+Developer.prototype.constructor = Developer;
+Developer.prototype.coding = function () {
+    console.log('코딩을 합니다.')
+}
+```
+
+```js
+// ES6
+class Job {
+    constructor (name) { this.name = name; }
+    work () {
+      console.log(this.name + ' 일을 합니다.');
+    }
+}
+
+class Developer extends Job {
+    constructor () { super("프로그래머"); }
+    coding () {
+      console.log('코딩을 합니다.'); }
+}
+
+var itJob = new Developer();
+itJob.work();    // 프로그래머 일을 합니다.
+itJob.coding();  // 코딩을 합니다.
+
+console.log(itJob instanceof Developer);  // true
+console.log(itJob instanceof Job);        // true
+```
 
 </div>
 </details>
