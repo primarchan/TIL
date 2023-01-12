@@ -245,6 +245,7 @@ console.log("num > num ? 'true' : 'false' -> " + num > num ? 'true' : 'false'); 
 <details>
 <summary><b>3강 학습 자료 보기 (클릭)</b></summary>
 <div markdown="1">
+
 #### 3.1 함수 - 개요
 - JS 에서 함수는 독립된 목적의 작업을 수행하기 위한 코드의 블록입니다.
 - 함수는 각각의 기능을 가지며 JS 의 함수는 코드의 집합을 나타내는 자료형이며 객체입니다.
@@ -408,10 +409,19 @@ let Foo = new Foo();  // Uncaught TypeError: Foo is not a constuctor.
 let func = ([a, b] = [1, 2], {x: c} = {x:a +b}) => a + b + c;
 ```
 
+#### 3.5 함수 활용 실습
+- Node, NPM 설치
+> Node 버전 확인 커맨드 : `node -v`  
+> npm 버전 확인 커맨드 : `npm -v`
+- readline-sync 모듈 설치
+> 모듈 설치 커맨드 : `npm install readline-sync`
+- JS 파일 실행
+> 파일이 위치한 디렉토리로 이동 -> 실행 커맨드 : node {파일명}.js
 
 </div>
 </details>
 
+### 4강 - 
 <details>
 <summary><b>4강 학습 자료 보기 (클릭)</b></summary>
 <div markdown="1">
