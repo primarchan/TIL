@@ -41,7 +41,7 @@
 </div>
 </details>
 
-### 2강 - Data Types, Operators
+### 2강 - Data Types (자료형), Operators (연산자)
 <details>
 <summary><b>2강 학습 자료 보기 (클릭)</b></summary>
 <div markdown="1">
@@ -241,7 +241,7 @@ console.log("num > num ? 'true' : 'false' -> " + num > num ? 'true' : 'false'); 
 </div>
 </details>
 
-### 3강 - Functions
+### 3강 - Functions (함수)
 <details>
 <summary><b>3강 학습 자료 보기 (클릭)</b></summary>
 <div markdown="1">
@@ -450,9 +450,61 @@ getUsefulContens("https://www.example.com", data => {
 </div>
 </details>
 
-### 4강 - 
+### 4강 - Array (배열)
 <details>
 <summary><b>4강 학습 자료 보기 (클릭)</b></summary>
+
+#### 4.1 배열 (Array) 개요
+- JS 에서 배열 (Array) 은 유사한 의미를 갖는 데이터들을 모아서 관리할 수 있는 리스트 형태의 데이터 집합입니다.
+- JS 의 배열은 갤이가 고정되어 있지 않으며 데이터의 추가나 삭제를 통해 크기를 변경할 수 있습니다.
+- 배열은 인덱스 (Index) 를 통해 데이터를 관리하며 하나의 배열 변수를 이용해 다수의 값을 관리합니다.
+- 배열의 요소는 일반 변수와 마찬가지로 저장되는 값에 의해 데이터 타입이 결정됩니다.
+```js
+let numbers = [10, 6, 9, 11, 20];
+// let numbers = new Array(10, 6, 9, 11, 20);
+
+console.log(numbers);  // [10, 6, 9, 11, 20]
+
+for (let i = 0; i < numbers.length; i++) {
+  console.log(`Index[${i}] : ${numbers[i]}`);
+}
+
+for(let number of numbers) {
+  console.log(`value : ${number}`);
+}
+
+```
+
+#### 4.2 배열의 활용
+- JS 에서 배열은 객체이며 다양한 메서드를 제공합니다.
+- 배열의 다양한 내장 메서드를 활용하면 배열 요소의 추가, 삭제, 순회 등과 같은 기능을 손쉽게 구현할 수 있습니다.
+- 배열 요소에 대한 순회는 반복문을 사용하거나 배열 객체의 map(), filter(), find() 등과 같은 내장 메서드를 이용해 다양한 방식으로 순회 가능합니다.
+```js
+let numbers = [10, 6, 9, 11, 20];
+
+numbers.push(55);  // 마지막 요소 추가
+console.log(numbers);  // [10, 6, 9, 11, 20, 55]
+numbers.pop();  // 마지막 요소 제거
+console.log(numbers);  // [10, 6, 9, 11, 20]
+
+numbers.unshift(-55);  // 첫 번째 요소 추가
+console.log(numbers);  // [-55, 10, 6, 9, 11, 20]
+numbers.shift(); // 첫 번째 요소 제거
+console.log(numbers);  // [10, 6, 9, 11, 20]
+```
+
+```js
+let numbers = [10, 6, 9, 11, 20];
+
+for (let i = 0; i < numbers.length; i++) {
+  console.log(`number : ${numbers[i]}`);
+}
+
+numbers.map(number => console.log(`number : ${number}`));  // 순회
+let evenNumbers = numbers.filter(number => number % 2 === 0);  // 필터
+evenNumbers.map(number => console.log(`number : ${number}`));  // 필터 결과
+```
+
 <div markdown="1">
 
 </div>
@@ -465,6 +517,19 @@ getUsefulContens("https://www.example.com", data => {
 </div>
 </details>
 
+<details>
+<summary><b>6강 학습 자료 보기 (클릭)</b></summary>
+<div markdown="1">
+
+</div>
+</details>
+
+<details>
+<summary><b>7강 학습 자료 보기 (클릭)</b></summary>
+<div markdown="1">
+
+</div>
+</details>
 
 </div>
 </details>
