@@ -409,14 +409,43 @@ let Foo = new Foo();  // Uncaught TypeError: Foo is not a constuctor.
 let func = ([a, b] = [1, 2], {x: c} = {x:a +b}) => a + b + c;
 ```
 
-#### 3.5 함수 활용 실습
+#### (참고) 함수 활용 실습
 - Node, NPM 설치
 > Node 버전 확인 커맨드 : `node -v`  
 > npm 버전 확인 커맨드 : `npm -v`
 - readline-sync 모듈 설치
 > 모듈 설치 커맨드 : `npm install readline-sync`
 - JS 파일 실행
-> 파일이 위치한 디렉토리로 이동 -> 실행 커맨드 : node {파일명}.js
+> 파일이 위치한 디렉토리로 이동 -> 실행 커맨드 : node {파일명}.js  
+> ES6 모듈 사용방법에 따라 JS 파일의 확장자를 js -> mjs 로 변경  
+> -> 실행 커맨드 : `node --experimental-json-modules Calculator.mjs`
+
+#### 3.5 Modules
+- ES6 에 정의된 API 이기 때문에 Babel 같은 트랜스파일러 (transpiler) 와 함께 사용합니다.
+- 모듈의 형태는 Named Module, Default Module 2가지가 있습니다.
+- 모듈의 선언은 export 키워드를 이용하며 변수, 함수, 클래스 모두 export 할 수 있습니다.
+- 모듈의 사용은 import 키워드를 이용합니다.
+```js
+function getJSON(url, callback) {
+    let xhr = new XMLHttpRequest();
+    xkr.onload = function () {
+        callback(this.responseText);
+    };
+    xhr.open("GET", url, true);
+    xhr.send();
+}
+
+export function getUsefulContents(url, callback) {
+    getJSON(url, data => callback(JSON.parse(data)));
+}
+```
+
+```js
+import { getUsefulContens } from file.js;
+getUsefulContens("https://www.example.com", data => {
+    doSomethingUseful(data);
+});
+```
 
 </div>
 </details>
