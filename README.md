@@ -1,5 +1,6 @@
 # TIL
 - Today I Learned
+<hr>
 
 ## JavaScript for Beginner
 <details>
@@ -610,6 +611,7 @@ console.log(itJob instanceof Job);        // true
 </div>
 </details>
 
+### 6강 - TravelClub 구현 실습
 <details>
 <summary><b>6강 학습 자료 보기 (클릭)</b></summary>
 <div markdown="1">
@@ -617,12 +619,6 @@ console.log(itJob instanceof Job);        // true
 </div>
 </details>
 
-<details>
-<summary><b>7강 학습 자료 보기 (클릭)</b></summary>
-<div markdown="1">
-
-</div>
-</details>
 
 </div>
 </details>
