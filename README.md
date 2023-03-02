@@ -624,3 +624,15 @@ console.log(itJob instanceof Job);        // true
 </details>
 
 <hr>
+
+## Java for Beginner
+<details>
+<summary><b>Java 기초 강의 (클릭)</b></summary>
+<div markdown="1">
+
+- [제네릭 (Generic) 이해하기](./java/generic/README.md)
+
+</div>
+</details>
+
+<hr>
