@@ -636,3 +636,15 @@ console.log(itJob instanceof Job);        // true
 </details>
 
 <hr>
+
+## JPA for Beginner
+<details>
+<summary><b>JPA 기초 강의 (클릭)</b></summary>
+<div markdown="1">
+
+- [JPA 이론 및 실습](./jpa/README.md)
+
+</div>
+</details>
+
+<hr>

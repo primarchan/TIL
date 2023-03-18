@@ -55,6 +55,16 @@
   - OR Mapping 프레임워크는 Java 객체와 데이터베이스 릴레이션 (테이블)을 매핑합니다.
 
 ### 1-4 JPA (Java Persistence API) 의 이해
-
+- JPA (Java Persistence API) 은 자바 프로그램에서 관계형 데이터베이스에 접근하는 방식을 명세화한 인터페이스입니다.
+- JPA 자바 진영의 ORM (Object-Relational Mapping) 기술 표준입니다.
+- JPA 는 자바 애플리케이션 JDBC 사이에서 동작하며, 일반적으로 구현체는 Hibernate 라이브러리를 사용합니다.
+- JPA 를 적용할 경우, 도메인 객체는 기술에 의존적이지 않으며 재사용을 높일 수 있습니다.
+- JPA 를 사용해서 객체를 영속화 하기 위해서는 객체에 Annotation 을 추가하거나 별도의 메타 데이터 구성이 필요합니다.
 
 ### 1-5 JPA 기초 실습
+- DB 설치 : H2 DB
+  - [H2 DB 다운로드 링크](https://www.h2database.com/html/main.html)
+- H2 DB 의 3가지 모드
+  - Sever Mode
+  - Embedded Mode
+  - In-Memory Mode
