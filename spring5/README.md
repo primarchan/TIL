@@ -59,10 +59,36 @@
 <div markdown="1">
 
 ### 2.1 Travel Club Project 개요
+- Travel Club Project 는 여행 클럽과 클럽 멤버 관리 (클럽 개설 과 변경 등) 를 위한 Application
+- Travel Club Project 는 크게 4 단계 과정을 통해 개발을 진행
+- 웹 환경에서 서비스할 수 있도록 구현하며, 사용자 UI (Front-End) 는 REST-Client 를 이용
 
-### 2.2 UML
+### 2.2 UML (1/2)
+- 여행 클럽 정보는 Travel Club 클래스로 정의하며 클럽명, 소개, 개설일을 정보로 갖습니다.
+- CommunityMember 클래스는 여행 클럽의 멤버에 대한 정보를 담고 있는 클래스입니다.
+- 여행 클럽과 소속 멤버들의 관계는 Membership 클래스를 통해 관리
+<img src="./img/uml/entity_diagram.jpeg">
+
+### 2.2 UML (2/2) - Class Diagram (1/3)
+- 모든 클래스는 그 역할에 따라 구분하고 이를 계층 (Layer) 으로 나누어 관리 구성
+- 역할의 구분은 정보 (Entity), 처리(Service), 저장(Store) 로 계층으로 분리
+- 처리와 저장에 해당하는 Service 와 Store 은 인터페이스를 이용해 느슨한 결합 (Loose Coupling) 을 갖도록 함
+- <img src="./img/uml/travelclub_diagram.jpeg">
+
+### 2.2 UML (2/2) - Class Diagram (2/3)
+- 서비스 영역은 클럽, 멤버, 멤버십에 대한 인터페이스와 이를 구현한 구현 클래스로 구성
+- 각 서비스의 구현체 클래스는 스터어 영역의 언터페이스를 속성으로 참조
+- Membership 을 구현한 클래스는 클럽, 멤버, 그리고 멤버십에 대한 스토처 인터페이스의 참조를 갖도록 함
+- <img src="./img/uml/service_diagram.jpeg">
+
+### 2.2 UML (2/2) - Class Diagram (3/3)
+- 스토어 영역은 클럽, 멤버, 그리고 멤버십에 대한 인터페이스와 이를 구현한 구현체로 구성
+- 스토어 영역의 구현 클랫들은 각 데이터에 대한 저장, 검색, 수정, 삭제 기능을 수행
+- Spring Data JPA 를 적용하는 4단계에는 DB 를 통해 데이터를 저장하며 1 ~ 3 단계에서는 Map 을 이용
+- <img src="./img/uml/store_diagram.jpeg">
 
 ### 2.3 구현 : Entities, Services, Stores
+- [참고 GitHub 링크](https://github.com/namoosori/spring5-for-beginner)
 
 ### 2.4 이해 #01 : Spring Core IoC / DI
 
