@@ -4,7 +4,7 @@
 
 ## JavaScript for Beginner
 <details>
-<summary><b>JavaScript 기초 강의 (클릭)</b></summary>
+<summary><b>JavaScript 학습 자료 (클릭)</b></summary>
 <div markdown="1">
 
 ### 1강 - JavaScript 소개
@@ -627,7 +627,7 @@ console.log(itJob instanceof Job);        // true
 
 ## Java for Beginner
 <details>
-<summary><b>Java 기초 강의 (클릭)</b></summary>
+<summary><b>Java 학습 자료 (클릭)</b></summary>
 <div markdown="1">
 
 - [제네릭 (Generic) 이해하기](./java/generic/README.md)
@@ -639,10 +639,22 @@ console.log(itJob instanceof Job);        // true
 
 ## JPA for Beginner
 <details>
-<summary><b>JPA 기초 강의 (클릭)</b></summary>
+<summary><b>JPA 학습 자료 (클릭)</b></summary>
 <div markdown="1">
 
 - [JPA 이론 및 실습](./jpa/README.md)
+
+</div>
+</details>
+
+<hr>
+
+## Spring 5 for Beginner
+<details>
+<summary><b>Spring 5 학습 자료 (클릭)</b></summary>
+<div markdown="1">
+
+- [Sprng5 이론 및 실습](./spring5/README.md)
 
 </div>
 </details>
