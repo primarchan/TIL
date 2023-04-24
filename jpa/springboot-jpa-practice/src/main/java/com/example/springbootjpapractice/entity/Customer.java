@@ -28,8 +28,4 @@ public class Customer {
         this.registerDate = System.currentTimeMillis();
     }
 
-    public static Customer sample() {
-        return new Customer("ID0001", "Kim");
-    }
-
 }
