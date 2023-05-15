@@ -4,6 +4,7 @@
              version="2.0">
 
     <persistence-unit name="customer-exam">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <properties>
             <!-- H2 DB -->
             <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
@@ -11,6 +12,7 @@
             <property name="javax.persistence.jdbc.password" value=""/>
             <property name="javax.persistence.jdbc.url" value="jdbc:h2:tcp://localhost/~/h2/db/jpasample"/>
             <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+            <property name="hibernate.hbm2ddl.auto" value="create"/>
 
             <!-- Option -->
             <property name="hibernate.show_sql" value="true"/>
