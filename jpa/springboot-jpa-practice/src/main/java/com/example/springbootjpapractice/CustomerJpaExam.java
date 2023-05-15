@@ -17,11 +17,18 @@ public class CustomerJpaExam {
         tx.begin();
 
         try {
-            Customer customer = new Customer("ID0003", "Hong");
-            em.persist(customer);  // Customer 객체가 영속 상태 (Managed)
-            em.detach(customer);  // Customer 객체가 준영속 상태 (Detached)
+            // Customer customer = new Customer("ID0003", "Hong");
+            // em.persist(customer);  // Customer 객체가 영속 상태 (Managed)
+            // em.detach(customer);  // Customer 객체가 준영속 상태 (Detached)
 
-            Customer foundCustomer = em.find(Customer.class, "ID0003");
+            // Customer foundCustomer = em.find(Customer.class, "ID0003");
+
+            Customer customer = new Customer();
+            customer.setName("Kim");
+            customer.setRegisterDate(System.currentTimeMillis());
+            em.persist(customer);
+
+            System.out.println("========== Before Commit ==========");
 
             tx.commit();
         } catch (Exception e) {
