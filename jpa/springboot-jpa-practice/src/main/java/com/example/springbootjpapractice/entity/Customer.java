@@ -11,10 +11,12 @@ import javax.persistence.*;
 @Entity
 @ToString
 @NoArgsConstructor
+@SequenceGenerator(name = "customer_generator", sequenceName = "customer_seq", initialValue = 1, allocationSize = 50)
 public class Customer {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    // @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "customer_generator")
     private String id;
 
     private String name;
